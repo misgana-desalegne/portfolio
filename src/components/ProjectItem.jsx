@@ -4,10 +4,16 @@ import backgroundImage from "../assets/VR.png";
 import image from "../assets/signal.png";
 import image2 from "../assets/fsgif.gif";
 function ProjectItem(props) {
+  const handleDivClick = () => {
+    window.location.href = "https://misgana-desalegne.github.io/vr-env/";
+  };
   return (
     <div className="container">
       <div className="row">
-        <div className="col-sm-12 col-md-6 col-lg-4 mb-4">
+        <div
+          className="col-sm-12 col-md-6 col-lg-4 mb-4"
+          onClick={handleDivClick}
+        >
           <div
             className="card text-dark card-has-bg click-col"
             style={{
