@@ -1,5 +1,6 @@
 import React from "react";
 import "../style/NavigationBar.css";
+import "../assets/icon.svg";
 
 const NavigationBar = () => {
   const handleScrollToSection = (sectionId) => {
@@ -12,10 +13,12 @@ const NavigationBar = () => {
   return (
     <nav class="navbar navbar-expand-lg bg-dark sticky-top navbar-dark">
       <div className="nav-container px-20">
-        <a class="navbar-brand" href="http://127.0.0.1:5173/?#">
+        <a
+          class="navbar-brand"
+          href="https://misgana-desalegne.github.io/portfolio/"
+        >
           <img
-            src="public\icon.svg"
-            alt="Logo"
+            src="icon.svg"
             width="30"
             height="24"
             class="d-inline-block align-text-top"
