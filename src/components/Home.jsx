@@ -1,9 +1,10 @@
 import React from "react";
 import "../style/TitleBar.css";
+import { Container, Row, Col } from "react-bootstrap";
 import ProjectItem from "./ProjectItem";
 function Home(props) {
   return (
-    <>
+    <Container className="py-5">
       <div className="row py-5"></div>
 
       <div className="row">
@@ -30,7 +31,7 @@ function Home(props) {
       </div>
 
       <ProjectItem />
-    </>
+    </Container>
   );
 }
 

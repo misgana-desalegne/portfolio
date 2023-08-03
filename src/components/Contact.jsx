@@ -7,24 +7,26 @@ const Contact = () => {
       <hr />
       <div className="row">
         <div className="col" style={{ color: "green" }}>
-          <strong>Phone:</strong> +1 555-1234-5678
+          <strong>Phone:</strong> +33753681749
         </div>
       </div>
       <div className="row">
         <div className="col" style={{ color: "green" }}>
-          <strong>WhatsApp:</strong> +1 555-9876-5432
+          <strong>WhatsApp:</strong> +33753681749
         </div>
       </div>
       <div className="row">
         <div className="col" style={{ color: "blue" }}>
           <strong>Email:</strong>{" "}
-          <a href="mailto:contact@example.com">contact@example.com</a>
+          <a href="misgana21son@gmail.com">misgana21son@gmail.com</a>
         </div>
       </div>
       <div className="row">
         <div className="col" style={{ color: "black" }}>
           <strong>GitHub:</strong>{" "}
-          <a href="https://github.com/yourusername">github.com/yourusername</a>
+          <a href="https://github.com/misgana-desalegne">
+            github.com/misgana-desalegne
+          </a>
         </div>
       </div>
     </div>

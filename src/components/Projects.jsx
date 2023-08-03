@@ -7,34 +7,26 @@ function Projects(props) {
         <div class="card h-100">
           <img src="src\assets\signal.png" class="card-img-top" alt="..." />
           <div class="card-body">
-            <h5 class="card-title">Card title</h5>
-            <p class="card-text">
-              This is a longer card with supporting text below as a natural
-              lead-in to additional content. This content is a little bit
-              longer.
-            </p>
+            <h5 class="card-title">Biosignals</h5>
+            <p class="card-text">This is about signal</p>
           </div>
         </div>
       </div>
       <div class="col">
         <div class="card h-100">
-          <img src="src\assets\signal.png" class="card-img-top" alt="..." />
+          <img src="src\assets\VR.png" class="card-img-top" alt="..." />
           <div class="card-body">
-            <h5 class="card-title">Card title</h5>
-            <p class="card-text">This is a short card.</p>
+            <h5 class="card-title">Virtual Reality</h5>
+            <p class="card-text">This is about VR</p>
           </div>
         </div>
       </div>
       <div class="col">
         <div class="card h-100">
-          <img
-            src="src\assets\1689754811145.gif"
-            class="card-img-top"
-            alt="..."
-          />
+          <img src="src\assets\dev.png" class="card-img-top" alt="..." />
           <div class="card-body">
-            <h5 class="card-title">Card title</h5>
-            <p class="card-text">This is a short card.</p>
+            <h5 class="card-title">Development</h5>
+            <p class="card-text">This is about other projects.</p>
           </div>
         </div>
       </div>

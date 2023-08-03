@@ -10,7 +10,6 @@ function App() {
   return (
     <>
       <NavigationBar />
-
       <div
         style={{
           backgroundImage: `url(${backgroundImage})`,
@@ -23,7 +22,7 @@ function App() {
           <Home />
         </div>
       </div>
-      <div id="projects" style={{ height: "800px", background: "#d0d0d0" }}>
+      <div id="projects" style={{ padding: 20, background: "#d0d0d0" }}>
         <Projects />
       </div>
 
