@@ -3,11 +3,15 @@
   align-items: center;
   position: relative;
   padding: 10px;
+  border-radius: 10;
+  border-width: 5;
+  border-color: aquamarine;
 }
 
 .title-bar h1 {
   margin: 0;
   position: relative;
+  color:aliceblue;
 }
 
 .title-bar h1::after {
@@ -17,8 +21,8 @@
   left: 0;
   width: 0;
   height: 2px;
-  background-color: #007bff; /* Replace with your desired color */
-  transition: width 0.3s; /* Adjust the speed of the sliding effect */
+  background-color: #92f017; 
+  transition: width 0.3s; 
 }
 
 .title-bar h1:hover::after {

@@ -14,15 +14,14 @@ function Home(props) {
             <div className="col"></div>
             <div className="col">
               <div className="title-bar">
-                <h1 className="display-4 font-weight-bolder">
+                <h1 className=" title-bar display-4 font-weight-bolder">
                   Misgana Desalegne
                 </h1>
               </div>{" "}
               <div className="row intro py-5 jc-center">
-                <h5 className="font-weight-bolder tp-20">
-                  Hi welcome to my page, you can know more about me and the work
-                  I do in this website. I do a lot of staff!{"  "}
-                </h5>
+                <h3 className="font-weight-bolder tp-25 title-bar">
+                  !{"  "}
+                </h3>
               </div>
             </div>
             <div className="col"></div>

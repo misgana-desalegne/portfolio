@@ -1,6 +1,6 @@
 import { useState } from "react";
 import About from "./components/About";
-import backgroundImage from "./assets/hompage.png";
+import backgroundImage from "./assets/homepage.jpg";
 import Home from "./components/Home";
 import NavigationBar from "./components/NavigationBar";
 import Projects from "./components/Projects";
