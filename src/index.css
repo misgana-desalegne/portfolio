@@ -1,0 +1,35 @@
+/* Global Index Styles */
+:root {
+  --primary-color: #00d4ff;
+  --primary-dark: #0099ff;
+  --bg-dark: #1a1f2e;
+  --bg-darker: #16213e;
+  --text-primary: #ffffff;
+  --text-secondary: #b0b8c1;
+  --text-muted: #7a8a96;
+  --border-color: rgba(0, 212, 255, 0.2);
+  --transition: all 0.3s ease;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+#root {
+  width: 100%;
+  min-height: 100vh;
+}

@@ -111,7 +111,7 @@ function ProjectItem(props) {
             <div className="card-img-overlay d-flex flex-column">
               <div className="card-body">
                 <small className="card-meta mb-2">
-                  Biosignals and Machine Learning
+                  Python Developement and Machine Learning
                 </small>
                 <h4 className="card-title mt-0 ">
                   <a
@@ -130,7 +130,7 @@ function ProjectItem(props) {
                 <div className="media">
                   <div className="media-body">
                     <h6 className="my-0 text-dark d-block">
-                      Biosignals and ML
+                      Data and ML
                     </h6>
                     <small>Python Jupyter</small>
                   </div>
