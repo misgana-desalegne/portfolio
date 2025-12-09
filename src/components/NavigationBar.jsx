@@ -51,6 +51,15 @@ const NavigationBar = () => {
           </li>
           <li className="nav-item">
             <Link 
+              to="/services" 
+              className={`nav-link ${isActive('/services') ? 'active' : ''}`}
+              onClick={() => setIsMenuOpen(false)}
+            >
+              Services
+            </Link>
+          </li>
+          <li className="nav-item">
+            <Link 
               to="/about" 
               className={`nav-link ${isActive('/about') ? 'active' : ''}`}
               onClick={() => setIsMenuOpen(false)}

@@ -2,10 +2,10 @@
   min-height: 100vh;
   background: linear-gradient(135deg, #1a1f2e 0%, #16213e 100%);
   padding: 80px 20px;
-  animation: fadeIn 0.8s ease-out;
+  animation: pageTransitionFadeIn 0.4s ease-in-out;
 }
 
-@keyframes fadeIn {
+@keyframes pageTransitionFadeIn {
   from {
     opacity: 0;
   }
@@ -24,9 +24,9 @@
 .projects-header h1 {
   font-size: clamp(2rem, 6vw, 3.5rem);
   font-weight: 800;
-  color: white;
+  color: #8b6f47;
   margin: 0 0 15px 0;
-  background: linear-gradient(135deg, #00d4ff, #0099ff);
+  background: linear-gradient(135deg, #8b6f47, #a0826d);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;

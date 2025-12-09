@@ -1,6 +1,16 @@
 .home-container {
   min-height: 100vh;
   overflow-x: hidden;
+  animation: pageTransitionFadeIn 0.4s ease-in-out;
+}
+
+@keyframes pageTransitionFadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
 }
 
 /* Hero Section */
@@ -55,7 +65,7 @@
   font-weight: 800;
   margin: 0;
   line-height: 1.2;
-  background: linear-gradient(135deg, #00d4ff, #0099ff);
+  background: linear-gradient(135deg, #8b6f47, #a0826d);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;

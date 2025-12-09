@@ -6,10 +6,10 @@
   background: linear-gradient(135deg, #1a1f2e 0%, #16213e 100%);
   padding: 80px 20px;
   color: white;
-  animation: fadeIn 0.8s ease-out;
+  animation: pageTransitionFadeIn 0.4s ease-in-out;
 }
 
-@keyframes fadeIn {
+@keyframes pageTransitionFadeIn {
   from {
     opacity: 0;
   }
@@ -28,6 +28,7 @@
   font-size: clamp(2rem, 6vw, 3.5rem);
   font-weight: 800;
   margin: 0 0 20px 0;
+  color: #8b6f47;
   background: linear-gradient(135deg, #00d4ff, #0099ff);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;

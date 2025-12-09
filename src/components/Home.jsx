@@ -17,12 +17,12 @@ function Home() {
       >
         <div className="hero-content">
           <div className="hero-text">
-            <h1 className="hero-title">Misgana Desalegne</h1>
-            <p className="hero-subtitle">Full-Stack Developer & Researcher</p>
+            <h1 className="hero-title">Kiros</h1>
+            <p className="hero-subtitle">Misgana Desalegne: Full-Stack Developer</p>
             <p className="hero-description">
               Crafting innovative digital experiences with modern technologies.
               <br />
-              Passionate about coding, VR, and pushing boundaries.
+              Passionate about development, IOT, and pushing boundaries.
             </p>
             
             <div className="hero-buttons">
@@ -49,16 +49,16 @@ function Home() {
           <div className="highlight-card">
             <div className="highlight-icon">💻</div>
             <h3>Development</h3>
-            <p>Full-stack web and mobile applications with React, Node.js, and modern frameworks</p>
+            <p>Full-stack web and mobile applications with React, Django, and modern frameworks</p>
           </div>
           <div className="highlight-card">
             <div className="highlight-icon">🎮</div>
-            <h3>VR & Graphics</h3>
-            <p>Virtual Reality applications and 3D environments using Unity and C#</p>
+            <h3>Data Analysis Projects</h3>
+            <p>Advanced Data analysis projects to increase customer satisfaction and sustainability</p>
           </div>
           <div className="highlight-card">
             <div className="highlight-icon">🔬</div>
-            <h3>Research</h3>
+            <h3>Innovation</h3>
             <p>Technology research and innovative solutions for complex problems</p>
           </div>
         </div>
