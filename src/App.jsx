@@ -6,6 +6,7 @@ import Projects from './components/Projects';
 import Services from './components/Services';
 import About from './components/About';
 import Contact from './components/Contact';
+import IotHomeIntegrationPage from './projects/IotHomeIntegrationPage';
 import './App.css';
 
 function App() {
@@ -19,6 +20,7 @@ function App() {
         <Route path="/services" element={<Services />} />
         <Route path="/about" element={<About />} />
         <Route path="/contact" element={<Contact />} />
+        <Route path="/homeintegration" element={<IotHomeIntegrationPage />} />
       </Routes>
     </Router>
   );

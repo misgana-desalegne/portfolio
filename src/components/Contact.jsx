@@ -52,7 +52,7 @@ const Contact = () => {
       icon: "🔗",
       label: "LinkedIn",
       value: "Let's connect",
-      link: "#"
+      link: "https://www.linkedin.com/in/misgana-desalegne/"
     }
   ];
 

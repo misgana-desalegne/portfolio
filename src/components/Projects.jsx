@@ -14,7 +14,7 @@ const projectsData = [
     image: devImg,
     tags: ["React", "Next.js", "MongoDB", "JavaScript"],
     date: "July 2023",
-    link: "#"
+    link: "/home"
   },
   {
     id: 2,
@@ -23,8 +23,9 @@ const projectsData = [
     description: "Real-time data analysis and ML-driven optimization for bike-station availability and anomaly detection (Python/Django + React).",
     image: devImg,
     tags: ["Python", "Django", "Data Analysis", "Machine Learning", "React"],
-    date: "2025",
+    date: "Ongoing...",
     link: "https://github.com/misgana-desalegne/portfolio/blob/main/projects/Projet-Velib-Data-Analysis.md"
+
   },
   {
     id: 4,
@@ -34,7 +35,7 @@ const projectsData = [
     image: devImg,
     tags: ["React", "CSS", "Vite", "Web Design"],
     date: "2024",
-    link: "#"
+    link: "/home"
   },
    {
     id: 3,
@@ -44,7 +45,7 @@ const projectsData = [
     image: signaImg,
     tags: ["Python", "Signal Processing", "Research", "ML"],
     date: "Ongoing",
-    link: "#"
+    link: "https://github.com/misgana-desalegne/portfolio/blob/main/projects/Projet-Velib-Data-Analysis.md"
   },
   {
     id: 5,
@@ -53,8 +54,8 @@ const projectsData = [
     description: "Home automation, security and sustainability integration using Home Assistant, Python, YAML and device APIs.",
     image: devImg,
     tags: ["Home Assistant", "Python", "IoT", "YAML", "APIs"],
-    date: "2025",
-    link: "https://github.com/misgana-desalegne/portfolio/blob/main/projects/IOT-Home-Integration.md"
+    date: "2025-ongoing",
+    link: "/homeintegration"
   },
   {
     id: 3,
