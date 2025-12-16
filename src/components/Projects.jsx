@@ -55,7 +55,7 @@ const projectsData = [
     image: devImg,
     tags: ["Home Assistant", "Python", "IoT", "YAML", "APIs"],
     date: "2025-ongoing",
-    link: "/homeintegration"
+    link: "homeintegration"
   },
   {
     id: 3,

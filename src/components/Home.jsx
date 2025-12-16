@@ -2,7 +2,6 @@ import React from "react";
 import { Link } from "react-router-dom";
 import "../style/Home.css";
 import backgroundImage from "../assets/homepage.jpg";
-
 function Home() {
   return (
     <div className="home-container">
@@ -24,7 +23,6 @@ function Home() {
               <br />
               Passionate about development, IOT, and pushing boundaries.
             </p>
-            
             <div className="hero-buttons">
               <Link to="/projects" className="btn btn-primary">
                 View My Work
