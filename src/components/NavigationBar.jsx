@@ -41,117 +41,117 @@ const NavigationBar = () => {
 
   return (
     <nav className="navbar">
-      <div className="navbar-container" style={{ display: "flex", alignItems: "center", justifyContent: "space-between" }}>
+      <div className="navbar-container">
         
-        {/* Logo on left */}
-        <Link to="/" className="navbar-brand" style={{ display: "flex", alignItems: "center", gap: "0.5rem" }}>
-          <div className="brand-icon" style={{
-            width: "40px",
-            height: "40px",
-            borderRadius: "50%",
-            backgroundColor: "#6366F1",
-            color: "#fff",
-            display: "flex",
-            justifyContent: "center",
-            alignItems: "center",
-            fontWeight: "bold",
-            fontSize: "1.25rem"
-          }}>K</div>
+        {/* Hamburger Menu - Left on Mobile */}
+        <button 
+          className={`hamburger ${isMenuOpen ? 'active' : ''}`}
+          onClick={toggleMenu}
+          aria-label="Toggle menu"
+        >
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+        
+        {/* Logo - Center on Mobile, Left on Desktop */}
+        <Link to="/" className="navbar-brand">
+          <div className="brand-icon">K</div>
           <span className="brand-text">Kiros</span>
         </Link>
 
-        <ul className={`nav-menu ${isMenuOpen ? 'active' : ''}`} style={{ display: "flex", gap: "1rem", listStyle: "none", margin: 0, padding: 0 }}>
+        {/* Navigation Menu */}
+        <ul className={`nav-menu ${isMenuOpen ? 'active' : ''}`}>
           <li className="nav-item">
-            <Link to="/" className={`nav-link ${isActive('/') ? 'active' : ''}`}>Home</Link>
+            <Link 
+              to="/" 
+              className={`nav-link ${isActive('/') ? 'active' : ''}`}
+              onClick={() => setIsMenuOpen(false)}
+            >
+              Home
+            </Link>
           </li>
           <li className="nav-item">
-            <Link to="/projects" className={`nav-link ${isActive('/projects') ? 'active' : ''}`}>Projects</Link>
+            <Link 
+              to="/projects" 
+              className={`nav-link ${isActive('/projects') ? 'active' : ''}`}
+              onClick={() => setIsMenuOpen(false)}
+            >
+              Projects
+            </Link>
           </li>
           <li className="nav-item">
-            <Link to="/services" className={`nav-link ${isActive('/services') ? 'active' : ''}`}>Services</Link>
+            <Link 
+              to="/services" 
+              className={`nav-link ${isActive('/services') ? 'active' : ''}`}
+              onClick={() => setIsMenuOpen(false)}
+            >
+              Services
+            </Link>
           </li>
           <li className="nav-item">
-            <Link to="/about" className={`nav-link ${isActive('/about') ? 'active' : ''}`}>About</Link>
+            <Link 
+              to="/about" 
+              className={`nav-link ${isActive('/about') ? 'active' : ''}`}
+              onClick={() => setIsMenuOpen(false)}
+            >
+              About
+            </Link>
           </li>
           <li className="nav-item">
-            <Link to="/contact" className={`nav-link ${isActive('/contact') ? 'active' : ''}`}>Contact</Link>
+            <Link 
+              to="/contact" 
+              className={`nav-link ${isActive('/contact') ? 'active' : ''}`}
+              onClick={() => setIsMenuOpen(false)}
+            >
+              Contact
+            </Link>
           </li>
         </ul>
 
-        <div className="navbar-right" style={{ display: "flex", alignItems: "center", gap: "0.5rem" }}>
-          <a href="https://github.com/misgana-desalegne" target="_blank" rel="noopener noreferrer" className="social-link" title="GitHub">
+        {/* Social Links & History Button */}
+        <div className="navbar-right">
+          <a 
+            href="https://github.com/misgana-desalegne" 
+            target="_blank" 
+            rel="noopener noreferrer"
+            className="social-link"
+            title="GitHub"
+          >
             <GithubIcon />
           </a>
-          <a href="mailto:misgana21son@gmail.com" className="social-link" title="Email">
+          <a 
+            href="mailto:misgana21son@gmail.com" 
+            className="social-link"
+            title="Email"
+          >
             <MailIcon />
           </a>
-
-          {/* Three-dot button on far right */}
           <button
             onClick={openModal}
-            style={{
-              backgroundColor: "transparent",
-              border: "none",
-            }}
+            className="history-btn"
+            title="View history"
           >
             ...
           </button>
 
+          {/* History Modal */}
           {isOpen && (
-            <div style={{
-              position: "fixed",
-              top: 0, left: 0,
-              width: "100%",
-              height: "100%",
-              backgroundColor: "rgba(0,0,0,0.7)",
-              display: "flex",
-              alignItems: "center",
-              justifyContent: "center",
-              zIndex: 1000
-            }}>
-              <div style={{
-                backgroundColor: "#111",
-                color: "#fff",
-                borderRadius: "12px",
-                width: "90%",
-                maxWidth: "400px",
-                textAlign: "center",
-                boxShadow: "0 8px 24px rgba(0,0,0,0.5)",
-                position: "relative"
-              }}>
-                <h2 style={{ marginTop: 0 }}>History</h2>
+            <div className="modal-overlay">
+              <div className="modal-content">
+                <button className="modal-close" onClick={closeModal}>&times;</button>
+                <h2>Visit History</h2>
                 <p>Total Visits: <strong>{visitCount}</strong></p>
-                <div style={{
-                  maxHeight: "250px",
-                  overflowY: "auto",
-                  backgroundColor: "#1a1a1a",
-                  padding: "1rem",
-                  borderRadius: "8px",
-                  marginTop: "1rem"
-                }}>
-                  <ul style={{ listStyle: "none", padding: 0, margin: 0 }}>
+                <div className="visit-history">
+                  <ul>
                     {visitHistory.map((v, i) => (
-                      <li key={i} style={{ padding: "0.25rem 0", borderBottom: "1px solid #222" }}>
-                        {v.time} — <span style={{ color: "#38bdf8" }}>{v.page}</span>
+                      <li key={i}>
+                        {v.time} — <span className="visit-page">{v.page}</span>
                       </li>
                     ))}
                   </ul>
                 </div>
-                <button
-                  onClick={closeModal}
-                  style={{
-                    marginTop: "1rem",
-                    padding: "0.5rem 1rem",
-                    backgroundColor: "#EF4444",
-                    color: "#fff",
-                    border: "none",
-                    borderRadius: "6px",
-                    cursor: "pointer",
-                    fontWeight: "600"
-                  }}
-                >
-                  Close
-                </button>
+                <button onClick={closeModal} className="modal-close-btn">Close</button>
               </div>
             </div>
           )}

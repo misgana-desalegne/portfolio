@@ -7,7 +7,6 @@ import Services from './components/Services';
 import About from './components/About';
 import Contact from './components/Contact';
 import IotHomeIntegrationPage from './projects/IotHomeIntegrationPage';
-import VisitCounter from './additional wiindows/VisitCounter.jsx';
 import './App.css';
 
 function App() {
