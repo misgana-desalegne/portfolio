@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import "../style/Projects.css";
 import signaImg from "../assets/signal.png";
 import VRImg from "../assets/VR.png";
@@ -55,7 +56,7 @@ const projectsData = [
     image: devImg,
     tags: ["Home Assistant", "Python", "IoT", "YAML", "APIs"],
     date: "2025-ongoing",
-    link: "homeintegration"
+    link: "/homeintegration"
   },
   {
     id: 3,
@@ -81,6 +82,7 @@ const projectsData = [
 
 function Projects() {
   const [activeFilter, setActiveFilter] = useState("all");
+  const navigate = useNavigate();
 
   const filteredProjects = activeFilter === "all" 
     ? projectsData 
@@ -122,7 +124,18 @@ function Projects() {
             <div className="project-image">
               <img src={project.image} alt={project.title} />
               <div className="project-overlay">
-                <a href={project.link} className="project-link" target="_blank" rel="noopener noreferrer">
+                <a 
+                  href={project.link} 
+                  className="project-link" 
+                  target={project.link.startsWith('/') ? undefined : "_blank"}
+                  rel={project.link.startsWith('/') ? undefined : "noopener noreferrer"}
+                  onClick={(e) => {
+                    if (project.link.startsWith('/')) {
+                      e.preventDefault();
+                      navigate(project.link);
+                    }
+                  }}
+                >
                   View Project
                 </a>
               </div>
