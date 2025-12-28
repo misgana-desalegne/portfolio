@@ -64,6 +64,3 @@ Next Steps
 - Add ML-based predictive heating schedules using historical occupancy and weather data.
 - Implement automatic anomaly detection for unusual energy consumption or sensor behavior.
 
----
-
-*File created for portfolio — more technical details and diagrams can be added on request.*
