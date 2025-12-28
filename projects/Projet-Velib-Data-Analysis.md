@@ -49,7 +49,3 @@ Next Steps / Enhancements
 - Integrate live weather and event data to improve forecasting accuracy.
 - Add simulation tools to test rebalancing strategies before deployment.
 - Provide an operator mobile app for dynamic rebalancing tasks driven by predictions.
-
----
-
-*File created for portfolio — can expand with sample charts, sample API specs, and model evaluation metrics on request.*
