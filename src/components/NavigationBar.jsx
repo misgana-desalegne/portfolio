@@ -1,43 +1,20 @@
-import React, { useState, useEffect } from "react"; 
+import React, { useState } from "react"; 
 import { Link, useLocation } from "react-router-dom";
+import { useLanguage } from "../context/LanguageContext";
+import { translations } from "../translations/translations";
 import "../style/NavigationBar.css";
 
 const NavigationBar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const location = useLocation();
+  const { language, toggleLanguage } = useLanguage();
+  const t = translations[language];
 
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
   };
 
   const isActive = (path) => location.pathname === path;
-
-  const [isOpen, setIsOpen] = useState(false);
-  const openModal = () => setIsOpen(true);
-  const closeModal = () => setIsOpen(false);
-
-  const [visitCount, setVisitCount] = useState(0);
-  const [visitHistory, setVisitHistory] = useState([]);
-
-  useEffect(() => {
-    const storedCount = parseInt(localStorage.getItem("visits") || "0", 10);
-    const storedHistory = JSON.parse(localStorage.getItem("visitHistory") || "[]");
-
-    const newCount = storedCount + 1;
-    const newEntry = {
-      time: new Date().toLocaleString(),
-      page: window.location.pathname
-    };
-
-    localStorage.setItem("visits", newCount.toString());
-    localStorage.setItem(
-      "visitHistory",
-      JSON.stringify([...storedHistory, newEntry])
-    );
-
-    setVisitCount(newCount);
-    setVisitHistory([...storedHistory, newEntry]);
-  }, []);
 
   return (
     <nav className="navbar">
@@ -68,7 +45,7 @@ const NavigationBar = () => {
               className={`nav-link ${isActive('/') ? 'active' : ''}`}
               onClick={() => setIsMenuOpen(false)}
             >
-              Home
+              {t.nav.home}
             </Link>
           </li>
           <li className="nav-item">
@@ -77,7 +54,7 @@ const NavigationBar = () => {
               className={`nav-link ${isActive('/projects') ? 'active' : ''}`}
               onClick={() => setIsMenuOpen(false)}
             >
-              Projects
+              {t.nav.projects}
             </Link>
           </li>
           <li className="nav-item">
@@ -86,7 +63,7 @@ const NavigationBar = () => {
               className={`nav-link ${isActive('/services') ? 'active' : ''}`}
               onClick={() => setIsMenuOpen(false)}
             >
-              Services
+              {t.nav.services}
             </Link>
           </li>
           <li className="nav-item">
@@ -95,7 +72,7 @@ const NavigationBar = () => {
               className={`nav-link ${isActive('/about') ? 'active' : ''}`}
               onClick={() => setIsMenuOpen(false)}
             >
-              About
+              {t.nav.about}
             </Link>
           </li>
           <li className="nav-item">
@@ -104,13 +81,32 @@ const NavigationBar = () => {
               className={`nav-link ${isActive('/contact') ? 'active' : ''}`}
               onClick={() => setIsMenuOpen(false)}
             >
-              Contact
+              {t.nav.contact}
             </Link>
           </li>
         </ul>
 
-        {/* Social Links & History Button */}
+        {/* Social Links & Language Switcher */}
         <div className="navbar-right">
+          <div className="language-switcher">
+            <button 
+              className={`language-option ${language === 'en' ? 'active' : 'inactive'}`}
+              onClick={() => language !== 'en' && toggleLanguage()}
+              disabled={language === 'en'}
+              aria-label="Switch to English"
+            >
+              EN
+            </button>
+            <span className="language-separator">|</span>
+            <button 
+              className={`language-option ${language === 'fr' ? 'active' : 'inactive'}`}
+              onClick={() => language !== 'fr' && toggleLanguage()}
+              disabled={language === 'fr'}
+              aria-label="Passer au français"
+            >
+              FR
+            </button>
+          </div>
           <a 
             href="https://github.com/misgana-desalegne" 
             target="_blank" 
@@ -127,34 +123,6 @@ const NavigationBar = () => {
           >
             <MailIcon />
           </a>
-          <button
-            onClick={openModal}
-            className="history-btn"
-            title="View history"
-          >
-            ...
-          </button>
-
-          {/* History Modal */}
-          {isOpen && (
-            <div className="modal-overlay">
-              <div className="modal-content">
-                <button className="modal-close" onClick={closeModal}>&times;</button>
-                <h2>Visit History</h2>
-                <p>Total Visits: <strong>{visitCount}</strong></p>
-                <div className="visit-history">
-                  <ul>
-                    {visitHistory.map((v, i) => (
-                      <li key={i}>
-                        {v.time} — <span className="visit-page">{v.page}</span>
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-                <button onClick={closeModal} className="modal-close-btn">Close</button>
-              </div>
-            </div>
-          )}
         </div>
       </div>
     </nav>

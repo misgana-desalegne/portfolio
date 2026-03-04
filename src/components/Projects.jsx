@@ -1,5 +1,7 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import { useLanguage } from "../context/LanguageContext";
+import { translations } from "../translations/translations";
 import "../style/Projects.css";
 import signaImg from "../assets/signal.png";
 import VRImg from "../assets/VR.png";
@@ -25,8 +27,8 @@ const projectsData = [
     image: devImg,
     tags: ["Python", "Django", "Data Analysis", "Machine Learning", "React"],
     date: "Ongoing...",
-    link: "https://github.com/misgana-desalegne/portfolio/blob/main/projects/Projet-Velib-Data-Analysis.md"
-
+    link: "https://github.com/misgana-desalegne/portfolio/blob/main/projects/Projet-Velib-Data-Analysis.md",
+    youtubeId: "mR6Y-cFmZB0"
   },
   {
     id: 4,
@@ -66,7 +68,8 @@ const projectsData = [
     image: devImg,
     tags: ["Python", "Django", "Data Analysis", "Machine Learning", "React"],
     date: "2025",
-    link: "https://github.com/misgana-desalegne/portfolio/blob/main/projects/Projet-Velib-Data-Analysis.md"
+    link: "https://github.com/misgana-desalegne/portfolio/blob/main/projects/Projet-Velib-Data-Analysis.md",
+    youtubeId: "mR6Y-cFmZB0"
   },
     {
     id: 6,
@@ -76,32 +79,35 @@ const projectsData = [
     image: VRImg,
     tags: ["Unity", "C#", "VR", "Psychology"],
     date: "May 2023",
-    link: "https://misgana-desalegne.github.io/vr-env/"
+    link: "https://misgana-desalegne.github.io/vr-env/",
+    youtubeId: "gGrgsg204jU"
   }
 ];
 
 function Projects() {
   const [activeFilter, setActiveFilter] = useState("all");
   const navigate = useNavigate();
+  const { language } = useLanguage();
+  const t = translations[language];
 
   const filteredProjects = activeFilter === "all" 
     ? projectsData 
     : projectsData.filter(project => project.category === activeFilter);
 
   const categories = [
-    { id: "all", label: "All Projects" },
-    { id: "development", label: "Development" },
-    { id: "iot", label: "IoT / Home" },
-    { id: "data", label: "Data / ML" },
-    { id: "vr", label: "Virtual Reality" },
-    { id: "research", label: "Research" }
+    { id: "all", label: t.projects.filters.all },
+    { id: "development", label: t.projects.filters.development },
+    { id: "iot", label: t.projects.filters.iot },
+    { id: "data", label: t.projects.filters.data },
+    { id: "vr", label: t.projects.filters.vr },
+    { id: "research", label: t.projects.filters.research }
   ];
 
   return (
     <div className="projects-container">
       <div className="projects-header">
-        <h1>My Projects</h1>
-        <p>A collection of my latest work and research projects</p>
+        <h1>{t.projects.title}</h1>
+        <p>{t.projects.subtitle}</p>
       </div>
 
       <div className="filter-section">
@@ -122,23 +128,37 @@ function Projects() {
         {filteredProjects.map((project, index) => (
           <div key={project.id} className="project-card" style={{ animationDelay: `${index * 0.1}s` }}>
             <div className="project-image">
-              <img src={project.image} alt={project.title} />
-              <div className="project-overlay">
-                <a 
-                  href={project.link} 
-                  className="project-link" 
-                  target={project.link.startsWith('/') ? undefined : "_blank"}
-                  rel={project.link.startsWith('/') ? undefined : "noopener noreferrer"}
-                  onClick={(e) => {
-                    if (project.link.startsWith('/')) {
-                      e.preventDefault();
-                      navigate(project.link);
-                    }
-                  }}
-                >
-                  View Project
-                </a>
-              </div>
+              {project.youtubeId ? (
+                <div className="youtube-embed">
+                  <iframe
+                    src={`https://www.youtube.com/embed/${project.youtubeId}`}
+                    title={project.title}
+                    style={{ border: 'none' }}
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowFullScreen
+                  ></iframe>
+                </div>
+              ) : (
+                <>
+                  <img src={project.image} alt={project.title} />
+                  <div className="project-overlay">
+                    <a 
+                      href={project.link} 
+                      className="project-link" 
+                      target={project.link.startsWith('/') ? undefined : "_blank"}
+                      rel={project.link.startsWith('/') ? undefined : "noopener noreferrer"}
+                      onClick={(e) => {
+                        if (project.link.startsWith('/')) {
+                          e.preventDefault();
+                          navigate(project.link);
+                        }
+                      }}
+                    >
+                      {t.projects.viewProject}
+                    </a>
+                  </div>
+                </>
+              )}
             </div>
             
             <div className="project-content">
@@ -162,7 +182,7 @@ function Projects() {
 
       {filteredProjects.length === 0 && (
         <div className="no-projects">
-          <p>No projects found in this category.</p>
+          <p>{t.projects.noProjects}</p>
         </div>
       )}
     </div>
